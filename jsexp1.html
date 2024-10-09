@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Example 01</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #colorBox {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        background-color: blue;
+      }
+
+      #eye1 {
+        width: 25px;
+        height: 25px;
+        border-radius: 100px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        background-color: white;
+      }
+
+      #eye2 {
+        width: 25px;
+        height: 25px;
+        border-radius: 100px;
+        position: absolute;
+        top: 50px;
+        left: 125px;
+        background-color: white;
+      }
+
+      #mouth {
+        width: 85px;
+        height: 15px;
+        position: absolute;
+        top: 115px;
+        left: 60px;
+        background-color: white;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="colorBox"></div>
+    <div id="eye1"></div>
+    <div id="eye2"></div>
+    <div id="mouth"></div>
+    <button id="changeColorButton">HELP! I"VE BEEN TURNED INTO A BLUEBERRY! CLICK HERE NOW!</button>
+
+    <script>
+      const colorBox = document.getElementById("colorBox");
+      const changeColorButton = document.getElementById("changeColorButton");
+      const colors = ["black","green", "grey", "white", "yellow", "blue"];
+
+      changeColorButton.addEventListener("click", () => {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+        colorBox.style.backgroundColor = randomColor;
+      });
+    </script>
+  </body>
+</html>
