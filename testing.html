@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marty Ads</title>
+  <style>
+  body {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      animation: rainbowBackground 1s infinite;
+    }
+  
+    @keyframes rainbowBackground {
+      0% { background-color: red; }
+      14% { background-color: orange; }
+      28% { background-color: yellow; }
+      42% { background-color: green; }
+      57% { background-color: blue; }
+      71% { background-color: indigo; }
+      85% { background-color: violet; }
+      100% { background-color: red; } /* cycle repeats */
+    }
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+#main-content {
+  display: none;
+}
+
+.intro-text {
+font-size: 2em;
+text-align: center;
+margin-bottom: 20px;
+}
+
+.reveal-button {
+  padding: 20px 10px;
+  position: absolute;
+  font-size: 1.5em;
+  background-color: lime;
+  border: none;
+  z-index: 99999;
+  bottom: 255px;
+  left: 720px;
+  box-shadow: 5px 3px 5px white;
+  cursor: pointer;
+}
+  
+  .help {
+  position: absolute;
+  overflow: hidden;
+  z-index: 125;
+  background-color: visible;
+  }
+
+  .roaches {
+  position: absolute;
+  overflow: hidden;
+  z-index: 125;
+  background-color: transparent;
+  left: 500px;
+  top: -50px;
+  }
+
+  .fault {
+  position: absolute;
+  overflow: hidden;
+  z-index: 125;
+  background-color: transparent;
+  left: 500px;
+  bottom: 400px;
+  } 
+
+  .scary {
+  position: absolute;
+  overflow: hidden;
+  z-index: 125;
+  background-color: transparent;
+  left: 625px;
+  bottom: -150px;
+  }
+
+  .virus {
+  position: absolute;
+  overflow: hidden;
+  z-index: 125;
+  scale: 75%;
+  background-color: transparent;
+  bottom: -100px;
+  left: -70px;
+  }
+
+
+
+    .container {
+      position: absolute;
+      cursor: move;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .roach-container img {
+      width: 100%;
+      height: 100%;
+      z-index: 99999999999999;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <!--Intro Page-->
+<div id="intro">
+  <button class="reveal-button" onclick="revealContent()">CLICK HERE!</button>
+  <img src="https://images2.imgbox.com/88/05/lrjbXXJA_o.png" style="width: 1300px; height: px;">
+</div>
+
+<!--Main Content-->
+<div id="main-content"></div>
+  
+<!--Audio-->
+<audio autoplay loop hidden>
+  <source src="https://www.youtube.com/watch?v=bLvqxwhZvQ8" type="audio/mpeg">
+</audio>
+
+  <!-- Image containers -->
+ <div class="container image-container" style="width: 500px; height: 300px;">
+    <img src="https://media1.tenor.com/m/ydwXkXUFhaIAAAAC/hot-single.gif">
+  </div>
+
+  <div class="container image-container" style="width: 200px; height: 150px;">
+    <img src="https://i4.imageban.ru/out/2010/10/31/a6f5692208513ea7d98077f3b6efcbab.gif">
+  </div>
+
+  <div class="container image-container" style="width: 400px; height: 300px;">
+    <img src="https://media1.tenor.com/m/dOYqT1gdLFIAAAAC/speed-date-com-add.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/xHObkiKyu-YAAAAi/key-objects.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/k3fIwVDGC8wAAAAM/pinoy-ads-discount.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/cypvADXo_iEAAAAM/facebook-fan-page-verification-blue-tick-facebook-blue-tick.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/WCTT629hLvIAAAAM/irony-minions.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/e_-Zl9HEVO4AAAAM/sifugary.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/68g0kHQWVIQAAAAM/sifugary.gif">
+  </div>
+
+  <div class="container image-container" style="width: 500px; height: 100px;">
+    <img src="https://media.tenor.com/jNnl-n35rykAAAAM/nyan-cat-pixel.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/9cirxbho0y0AAAAM/ads-advertising.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 500px;">
+    <img src="https://media.tenor.com/yrmBRFDjrmsAAAAM/roblox-scam.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/nXG07_-kWk8AAAAM/depilador-manual.gif">
+  </div>
+
+  <div class="container image-container" style="width: 500px; height: 500px;">
+    <img src="https://images2.imgbox.com/d8/17/gzVtGRb0_o.png">
+  </div>
+
+  <div class="container image-container" style="width: 500px; height: 500px;">
+    <img src="https://images2.imgbox.com/85/aa/0sEyv5Jr_o.png">
+  </div>
+
+  <div class="container image-container" style="width: 500px; height: 500px;">
+    <img src="https://images2.imgbox.com/60/ed/Qu3cia3v_o.png">
+  </div>
+
+  <div class="container image-container" style="width: 500px; height: 500px;">
+    <img src="https://images2.imgbox.com/21/8a/Rens1VSO_o.png">
+  </div>
+  
+  <div class="container image-container" style="width: 850px; height: 500px;">
+    <img src="https://images2.imgbox.com/b0/e2/C6x2NcWd_o.png">
+  </div>
+
+  <div class="container image-container" style="width: 900px; height: 500px;">
+    <img src="https://images2.imgbox.com/3b/3d/fyDdKci7_o.png">
+  </div>
+
+  <div class="container image-container" style="width: 700px; height: 500px;">
+    <img src="https://i4.imageban.ru/out/2010/12/13/5e6523c1b0cb8af766ebeec40a886f5d.gif">
+  </div>
+
+  <div class="container image-container" style="width: 775px; height: 500px;">
+    <img src="https://i1.imageban.ru/out/2010/12/13/9b1d51542dd58c4327527a52ac9e4564.gif">
+  </div>
+
+  <!--ROACHES-->
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/sswzdSsMAZwAAAAi/rgb-roach.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/sswzdSsMAZwAAAAi/rgb-roach.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/sswzdSsMAZwAAAAi/rgb-roach.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/sswzdSsMAZwAAAAi/rgb-roach.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/jvYNnOKK2aMAAAAi/roach-dance.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/jvYNnOKK2aMAAAAi/roach-dance.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/2Cb6nT7dwrQAAAAi/%E8%9F%91%E8%9E%82.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/2Cb6nT7dwrQAAAAi/%E8%9F%91%E8%9E%82.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/2Cb6nT7dwrQAAAAi/%E8%9F%91%E8%9E%82.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/2Cb6nT7dwrQAAAAi/%E8%9F%91%E8%9E%82.gif">
+  </div>
+
+  <div class="container image-container" style="width: 300px; height: 300px;">
+    <img src="https://media.tenor.com/2Cb6nT7dwrQAAAAi/%E8%9F%91%E8%9E%82.gif">
+  </div>
+
+  <div class="container image-container" style="width: 200px; height: 200px;">
+    <img src="https://media.tenor.com/aDozr1-R2n0AAAAi/bitcoin.gif">
+  </div>
+
+  <div class="container image-container" style="width: 200px; height: 200px;">
+    <img src="https://media.tenor.com/aDozr1-R2n0AAAAi/bitcoin.gif">
+  </div>
+
+<!--TEXT CONTAINERS-->
+<div class="help" style="width: 900px; height: 900px;">
+  <img src="https://images2.imgbox.com/44/70/3ILpQ8Ny_o.png">
+</div>
+
+<div class="roaches" style="width: 600px; height: 300px;">
+  <img src="https://images2.imgbox.com/d7/dd/BsxPnSe5_o.png">
+</div>
+
+<div class="fault" style="width: 600px; height: 300px">
+  <img src="https://images2.imgbox.com/72/f3/MCn53Slj_o.png">
+</div>
+
+<div class="scary" style="width: 900x; height: 400px;">
+  <img src="https://images2.imgbox.com/89/ed/nrrJPlcr_o.png">
+</div>
+
+<div class="virus" style="width: 600px; height: 500px;">
+  <img src="https://images2.imgbox.com/7d/2a/uQvUiODg_o.png">
+</div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script>
+    function revealContent() {
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }
+    $(function () {
+      let zIndexCounter = 100;
+      let cursorX = 0, cursorY = 0;
+
+      $(document).on('mousemove', function(event) {
+        cursorX = event.pageX;
+        cursorY = event.pageY;
+      });
+
+      $(".container").each(function () {
+        let container = $(this);
+
+        // Randomize initial position
+        let randomTop = Math.floor(Math.random() * ($(window).height() - container.height()));
+        let randomLeft = Math.floor(Math.random() * ($(window).width() - container.width()));
+
+        container.css({
+          top: randomTop + "px",
+          left: randomLeft + "px",
+          zIndex: zIndexCounter++
+        });
+
+        // Make container draggable
+        container.draggable({
+          start: function() {
+            // Bring container to top when dragged
+            $(this).css("z-index", ++zIndexCounter);
+          }
+        });
+      });
+
+      // Bouncing and avoid cursor functionality
+      let speed = 3;
+      function bounceAndAvoidCursor(element) {
+        let xPos = parseFloat($(element).css('left'));
+        let yPos = parseFloat($(element).css('top'));
+        let xSpeed = speed;
+        let ySpeed = speed;
+        let avoidDistance = 300; // Distance to avoid the cursor
+
+        function move() {
+          let containerWidth = $(element).outerWidth();
+          let containerHeight = $(element).outerHeight();
+          let windowWidth = $(window).width();
+          let windowHeight = $(window).height();
+
+          // Check distance from cursor
+          let distX = xPos + containerWidth / 2 - cursorX;
+          let distY = yPos + containerHeight / 2 - cursorY;
+          let distance = Math.sqrt(distX * distX + distY * distY);
+
+          if (distance < avoidDistance) {
+            // If cursor is too close, move the element away
+            if (distX > 0) xSpeed = speed;
+            else xSpeed = -speed;
+            
+            if (distY > 0) ySpeed = speed;
+            else ySpeed = -speed;
+          }
+
+          // Regular bouncing off the walls
+          xPos += xSpeed;
+          yPos += ySpeed;
+
+          if (xPos + containerWidth >= windowWidth || xPos <= 0) {
+            xSpeed = -xSpeed;
+          }
+          if (yPos + containerHeight >= windowHeight || yPos <= 0) {
+            ySpeed = -ySpeed;
+          }
+
+          // Apply the new position
+          $(element).css({
+            left: xPos + 'px',
+            top: yPos + 'px'
+          });
+
+          requestAnimationFrame(move);
+        }
+
+        move();
+      }
+
+      // Apply bouncing and avoiding to each container
+      $(".container").each(function () {
+        bounceAndAvoidCursor(this);
+      });
+    });
+
+  </script>
+</body>
+</html>
