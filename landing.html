@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        /* Basic styling for centering content and background color */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f4f9;
+            color: red;
+            overflow: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: red;
+        }
+
+        .image-box {
+            width: 400px;
+            height: 500px;
+            position: relative;
+            left: -30px;
+            margin-bottom: 20px;
+            background-image: url('https://images2.imgbox.com/98/5f/QQ7Ev4bA_o.png'); /* First image */
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: background-image 0.3s ease-in;
+        }
+
+        .image-box.clicked {
+            background-image: url('https://images2.imgbox.com/2e/1b/vTnkMX3j_o.png'); /* Second image */
+            width: 500px;
+            height: 500px;
+            left: -30px;
+        }
+
+        /* Spinning animation */
+        @keyframes spinIn {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(1800deg);
+                opacity: 1;
+            }
+        }
+
+        /* Third image that spins in */
+        .image-spin {
+            width: 200px;
+            height: 300px;
+            background-image: url('https://i.calameoassets.com/230329214255-26f4250b4b9a0bf45fc7fe3c4fbf5bdb/large.jpg'); /* Third image */
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            animation: spinIn 0.5s ease-out forwards;
+            display: none; /* Hidden initially */
+        }
+    </style>
+    <script>
+        function handleClick() {
+            const imageBox = document.querySelector('.image-box');
+            imageBox.classList.add('clicked');
+
+            // Play the sound effect
+            const audio = document.getElementById('click-sound');
+            audio.play();
+
+            // Show the third image after a 2-second delay
+            setTimeout(() => {
+                const imageSpin = document.querySelector('.image-spin');
+                imageSpin.style.display = 'block';
+            }, 2000); // 2-second delay
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="image-box" onclick="handleClick()"></div>
+        <div class="image-spin"></div>
+        <h1>Martin's Classifieds</h1>
+        <p>Click to grab an issue.</p>
+        
+        <!-- Audio element for the sound effect -->
+        <audio id="click-sound" src="C:\Users\maria\OneDrive\Desktop\Open Chest (Minecraft)  Sound Effect.mp4"></audio>
+    </div>
+</body>
+</html>
